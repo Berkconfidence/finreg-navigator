@@ -1,0 +1,29 @@
+services:
+  # Vektör Veritabanı
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart : always
+    container_name: qdrant_db
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage
+    networks:
+      - ai_network
+
+  # Deney ve Metrik Takibi
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow_server
+    ports:
+      - "5000:5000"
+    command: mlflow server --host 0.0.0.0 # Dışarıya açmak için
+    volumes:
+      - ./mlflow_data:/mlflow # Loglar ve modeller
+    networks:
+      - ai_network
+
+networks:
+  ai_network:
+    driver: bridge

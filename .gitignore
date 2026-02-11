@@ -1,0 +1,6 @@
+qdrant_storage/
+mlflow_data/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc

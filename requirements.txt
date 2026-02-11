@@ -1,2 +1,5 @@
 qdrant-client
 fastembed
+llama-index
+mlflow
+llama-index-vector-stores-qdrant

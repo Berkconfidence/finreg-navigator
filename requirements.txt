@@ -3,3 +3,5 @@ fastembed
 llama-index
 mlflow
 llama-index-vector-stores-qdrant
+llama-index-llms-ollama
+llama-index-postprocessor-cohere-rerank

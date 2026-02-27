@@ -1,7 +1,14 @@
 qdrant-client
 fastembed
-llama-index
 mlflow
+llama-index
 llama-index-vector-stores-qdrant
 llama-index-llms-ollama
 llama-index-postprocessor-cohere-rerank
+ragas
+langchain-ollama
+langchain-huggingface
+fastapi
+uvicorn
+pydantic
+pydantic-settings

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+qdrant_storage/
+mlflow_data/
+data/
+.git/
+.gitignore
+*.ipynb
+*.md
+.dockerignore
+docker-compose.yaml

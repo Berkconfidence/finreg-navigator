@@ -12,3 +12,4 @@ fastapi
 uvicorn
 pydantic
 pydantic-settings
+llama-index-embeddings-huggingface

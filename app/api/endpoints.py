@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from app.models.schemas import QueryRequest, QueryResponse
-from app.services.rag_service import rag_service
+from app.services.rag_service import get_rag_service
 import mlflow
 import time
 
@@ -14,7 +14,7 @@ async def ask_compliance_question(request: QueryRequest):
     try:
         start_time = time.time()
         
-        result = rag_service.ask_question(request.question)
+        result = get_rag_service().ask_question(request.question)
         
         latency = time.time() - start_time
         

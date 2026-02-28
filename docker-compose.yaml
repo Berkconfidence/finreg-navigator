@@ -14,11 +14,15 @@ services:
     container_name: mlflow_server
     ports:
       - "5000:5000"
+    environment:
+      - MLFLOW_SERVER_ALLOWED_HOSTS=mlflow:*,localhost:*,127.0.0.1:*,0.0.0.0:*
     command: >
       mlflow server
       --host 0.0.0.0
       --backend-store-uri sqlite:///mlflow_data/mlflow.db
       --default-artifact-root /mlflow_data/artifacts
+      --allowed-hosts mlflow:*,localhost:*,127.0.0.1:*,0.0.0.0:*
+      --allowed-hosts mlflow:*,localhost:*,127.0.0.1:*,0.0.0.0:*
     volumes:
       - ./mlflow_data:/mlflow_data
     networks:

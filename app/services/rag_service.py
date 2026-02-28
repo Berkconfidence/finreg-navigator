@@ -15,7 +15,8 @@ class BankingRAGService:
         self.embed_model = HuggingFaceEmbedding(model_name=settings.EMBED_MODEL_NAME)
         
         self.llm = Ollama(
-            model=settings.LLM_MODEL_NAME, 
+            model=settings.LLM_MODEL_NAME,
+            base_url=settings.OLLAMA_BASE_URL,
             request_timeout=120.0,
             additional_kwargs={"keep_alive": 0}
         )
@@ -76,4 +77,11 @@ class BankingRAGService:
             sources=sources
         )
 
-rag_service = BankingRAGService()
+_rag_service = None
+
+def get_rag_service() -> BankingRAGService:
+    """Lazy initialization - ilk çağrıda servisi oluşturur."""
+    global _rag_service
+    if _rag_service is None:
+        _rag_service = BankingRAGService()
+    return _rag_service

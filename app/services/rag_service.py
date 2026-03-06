@@ -41,7 +41,11 @@ class BankingRAGService:
         qa_prompt_tmpl = PromptTemplate(
             "SADECE SANA VERİLEN BAĞLAMDAKİ BİLGİLERİ KULLANARAK CEVAP VER.\n"
             "KESİNLİKLE TÜRKÇE DIŞINDA BİR DİL KULLANMA.\n"
-            "Sen kıdemli bir Bankacılık Uyum Analistisin. Cevabını verirken mutlaka hangi maddeye dayandığını belirt.\n"
+            "Sen kıdemli bir Bankacılık Uyum Analistisin. Cevabını verirken mutlaka hangi maddeye dayandığını belirt.\n\n"
+            "ÖRNEK SORU: Açık bankacılık servisleri nedir?\n"
+            "ÖRNEK YANIT: Müşterilerin ya da müşteriler adına hareket eden tarafların API, web servis, dosya transfer protokolü gibi yöntemlerle bankanın sunduğu finansal servislere uzaktan erişerek bankacılık işlemlerini gerçekleştirebildikleri veya gerçekleştirilmesi için bankaya talimat verebildikleri elektronik dağıtım kanalını ifade eder.\n\n"
+            "ÖRNEK SORU: BS politikaları kim tarafından onaylanır?\n"
+            "ÖRNEK YANIT: BS politikaları yönetim kurulu tarafından onaylanır.\n\n"
             "BAĞLAM:\n{context_str}\n"
             "SORU: {query_str}\n"
             "YANIT (SADECE TÜRKÇE): "
